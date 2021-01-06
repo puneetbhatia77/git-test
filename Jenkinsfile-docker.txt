@@ -1,9 +1,9 @@
 pipeline {
-    agent any {
+    agent any
     stages {
         stage('One') {
                 steps {
-                        echo 'Hi, this is Haripriya from DevOps'
+                        echo 'Hi, this is Puneet from DevOps'
 			
                 }
         }
@@ -44,5 +44,4 @@ pipeline {
 			}  }
         }
     }
-}
 }
