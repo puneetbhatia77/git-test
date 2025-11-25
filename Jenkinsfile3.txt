@@ -20,6 +20,7 @@ pipeline {
         }
         unstable {
             echo 'unstable : This will run only if the run was marked as unstable'
+            unstable("Unstable build")
         }
         changed {
             echo 'changed : This will run only if the state of the Pipeline has changed from success to fail and vice-versa'
