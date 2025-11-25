@@ -8,6 +8,7 @@ pipeline {
                      echo 'Fail!'; sh 'exit 1'          
                 // echo 'SUCCESS'
             }
+         }
         }
         stage('Mark explicitly if needed') {
               steps {
