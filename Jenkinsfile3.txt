@@ -4,9 +4,9 @@ pipeline {
         stage('Dev') {
             steps {
                    // To simulate failure, uncomment below 2 lines and comment SUCCESS message.
-                   //  echo "Build failed"
-                   //  sh 'exit 1'        
-                  echo 'SUCCESS'
+                     echo "Build failed"
+                     sh 'exit 1'        
+                  // echo 'SUCCESS'
             }
         }
         stage('Test') {
