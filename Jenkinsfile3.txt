@@ -7,6 +7,16 @@ pipeline {
                 echo 'SUCCESS'
             }
         }
+        stage('Mark explicitly if needed') {
+              steps {
+                script {
+                  if (currentBuild.result == 'UNSTABLE') {
+                    echo "Tests failed, marking build unstable"
+                    currentBuild.result = 'UNSTABLE'
+                  }
+            }
+          }
+        }
     }
     post {
         always {
@@ -20,7 +30,6 @@ pipeline {
         }
         unstable {
             echo 'unstable : This will run only if the run was marked as unstable'
-            unstable("Unstable build")
         }
         changed {
             echo 'changed : This will run only if the state of the Pipeline has changed from success to fail and vice-versa'
