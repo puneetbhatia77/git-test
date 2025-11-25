@@ -5,19 +5,10 @@ pipeline {
             steps {
                 // To simulate unstable build for fail tests, uncomment below 2 lines and comment SUCCESS message.
                      catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
-                     echo 'Fail!'; sh 'exit 1' }         
+                     currentBuild.result = 'UNSTABLE'
+                     sh 'exit 1' }         
                  // echo 'SUCCESS'
             }
-        }
-        stage('Mark explicitly if needed') {
-              steps {
-                script {
-                  if (currentBuild.result == 'UNSTABLE') {
-                    echo "Tests failed, marking build unstable"
-                    currentBuild.result = 'UNSTABLE'
-                  }
-            }
-          }
         }
     }
     post {
