@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'Fail!'; sh 'exit 1'
-                echo 'SUCCESS'
+                // simulate tests failing 
+                     catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
+                     echo 'Fail!'; sh 'exit 1'          
+                // echo 'SUCCESS'
             }
         }
         stage('Mark explicitly if needed') {
