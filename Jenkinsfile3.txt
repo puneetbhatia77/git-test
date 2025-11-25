@@ -4,8 +4,8 @@ pipeline {
         stage('Test') {
             steps {
                 // To simulate unstable build for fail tests, uncomment below 2 lines
-                    // catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
-                    // echo 'Fail!'; sh 'exit 1' }         
+                     catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
+                     echo 'Fail!'; sh 'exit 1' }         
                  echo 'SUCCESS'
             }
         }
