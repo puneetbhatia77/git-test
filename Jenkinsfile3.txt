@@ -6,8 +6,8 @@ pipeline {
                 // To simulate unstable build for fail tests, uncomment below 3 lines and comment SUCCESS message.
                    //  catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
                    //  echo "Tests failed, marking build unstable"
-                     sh 'exit 1'          
-                 // echo 'SUCCESS'
+                   //  sh 'exit 1' }         
+                  echo 'SUCCESS'
             }
         }
     }
