@@ -1,14 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Dev') {
-            steps {
-                   // To simulate failure, uncomment below 2 lines and comment SUCCESS message.
-                     echo "Build failed"
-                     sh 'exit 1'        
-                  // echo 'SUCCESS'
-            }
-        }
         stage('Test') {
             steps {
                 // To simulate unstable build for fail tests, uncomment below 3 lines and comment SUCCESS message.
